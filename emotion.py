@@ -6,7 +6,7 @@ from collections import Counter
 def most_common(lst):
     return max(set(lst), key=lst.count)
 
-var_input = "I am sad"
+var_input = open("read.txt").read()
 
 var_input = re.sub(r'[\W\s\d]', ' ', var_input)
 input_tokenized = word_tokenize(var_input, "english")
@@ -29,10 +29,4 @@ for i in range(0,len(filtered_words)):
                 emotion_count.append(finalvalue.strip())
 
 
-print(most_common(emotion_count))
-
-
-
-
-
-
+print("The most common mood is : "+ most_common(emotion_count))
